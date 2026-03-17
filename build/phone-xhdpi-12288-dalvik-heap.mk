@@ -17,10 +17,15 @@
 
 # Provides overrides to configure the Dalvik heap for a 12 GiB phone
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=24m \
-    dalvik.vm.heapgrowthlimit=384m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.42 \
-    dalvik.vm.heapminfree=8m \
-    dalvik.vm.heapmaxfree=56m
+PRODUCT_VENDOR_PROPERTIES += \
+    dalvik.vm.heapstartsize?=24m \
+    dalvik.vm.heapgrowthlimit?=384m \
+    dalvik.vm.heapsize?=512m \
+    dalvik.vm.heaptargetutilization?=0.7 \
+    dalvik.vm.heapminfree?=16m \
+    dalvik.vm.heapmaxfree?=64m \
+    dalvik.vm.usap_pool_enabled?=true \
+    dalvik.vm.usap_pool_size_max?=5 \
+    dalvik.vm.madvise.vdexfile.size?=209715200 \
+    dalvik.vm.madvise.odexfile.size?=209715200 \
+    persist.sys.pinner.quota_pct?=15
